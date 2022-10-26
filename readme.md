@@ -3,22 +3,22 @@ default_value = {'int': 0; 'bool': false; 'float': 0; 'str': ''}
 
 | pseudocode | python |
 | ---------- | ------ |
-| DECLARE <variable> <type> | <variable> = default_value[<type>] |
-| IF <statement> THEN | if <statement>: |
-| ELSE IF <statement> THEN | elif <statement>: |
+| DECLARE \<variable> \<type> | \<variable> = default_value[\<type>] |
+| IF \<statement> THEN | if \<statement>: |
+| ELSE IF \<statement> THEN | elif \<statement>: |
 | ELSE | else: |
 | ENDIF | |
-| <variable> <- <statement> | <variable> = <statement> |
-| FOR <variable> <- <variable> TO <variable> | for <variable> in range(<variable>, <variable>+1) |
-| NEXT <variable> | |
-| WHILE <statement> DO | while <statement>: |
-| <variable> <- INPUT() | <variable> = input() |
-| OUTPUT <variable> | print(<variable>) |
+| \<variable> <- \<statement> | \<variable> = \<statement> |
+| FOR \<variable> <- \<variable> TO \<variable> | for \<variable> in range(\<variable>, \<variable>+1) |
+| NEXT \<variable> | |
+| WHILE \<statement> DO | while \<statement>: |
+| \<variable> <- INPUT() | \<variable> = input() |
+| OUTPUT \<variable> | print(\<variable>) |
 | <> | != |
-| LENGTH(<variable>) | len(<variable>) |
+| LENGTH(\<variable>) | len(\<variable>) |
 | // ... | # ... |
 | REPEAT | while True |
-| UNTIL <statement> | if <statement>: break |
+| UNTIL \<statement> | if \<statement>: break |
 | AND | and |
 | OR | or |
 | NOT | not |
