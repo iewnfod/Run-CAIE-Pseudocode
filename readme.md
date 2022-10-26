@@ -1,4 +1,4 @@
-<variable> 可以是一个变量或者一个值
+\<variable> 可以是一个变量或者一个值
 default_value = {'int': 0; 'bool': false; 'float': 0; 'str': ''}
 
 | pseudocode | python |
