@@ -15,14 +15,16 @@ def translate(file_path):
         'BOOL': False, 
         'REAL': 0, 
         'STRING': '\'\'', 
-        'CHAR': '\'\''
+        'CHAR': '\'\'', 
+        'ARRAY': '{}'
     }
     change_ = {
         'INT': 'int', 
         'BOOL': 'bool', 
         'REAL': 'float', 
         'STRING': 'str', 
-        'CHAR': 'str'
+        'CHAR': 'str', 
+        'ARRAY': 'to_dict'
     }
 
     def correct(t:str, _if = True):
@@ -180,6 +182,11 @@ def LOWER(s):
 def UPPER(s):
     return s.upper()
     '''
+    addition_array = '''
+def to_dict(s):
+    d = {i:s[i] for i in range(len(s))}
+    return d
+    '''
 
     father_path = os.path.abspath(os.path.dirname(file_path) + os.path.sep+'.')
     with open(os.path.join(father_path, name+'.py'), 'w') as f:
@@ -195,7 +202,9 @@ def UPPER(s):
             f.write(addition_lower)
         if 'UPPER' in total:
             f.write(addition_upper)
-        
+        if 'ARRAY' in total:
+            f.write(addition_array)
+
         f.write('\n')
 
         f.write('\n'.join(r)+'\n')
