@@ -3,7 +3,7 @@ default_value = {'int': 0; 'bool': false; 'float': 0; 'str': ''}
 
 | pseudocode | python |
 | ---------- | ------ |
-| DECLARE \<variable> \<type> | \<variable> = default_value[\<type>] |
+| DECLARE \<variable> : \<type> | \<variable> = default_value[\<type>] |
 | IF \<statement> THEN | if \<statement>: |
 | ELSE IF \<statement> THEN | elif \<statement>: |
 | ELSE | else: |
@@ -43,3 +43,64 @@ default_value = {'int': 0; 'bool': false; 'float': 0; 'str': ''}
 
 在读取写入文件的时候请使用绝对路径，以避免一些不必要的错误发生。
 若没有正常运行，请在同目录下找到同名的.py文件，手动运行。
+
+# Example
+
+// 1
+DECLARE a : INT
+a <- 1
+OUTPUT(a)
+
+// 2
+IF a = 1 THEN
+    OUTPUT(a+1)
+ELSE IF a = 2 THEN
+    OUTPUT(a+2)
+ELSE
+    OUTPUT a + 3
+ENDIF
+
+// 3
+IF a = "1" THEN
+    OUTPUT "Equal to 1"
+ELSE
+    OUTPUT "Not equal to 1"
+ENDIF
+
+// 3
+INPUT a
+OUTPUT a
+
+// 4
+FUNCTION add10(a)
+    OUTPUT a + 10
+    RETURN a + 10
+ENDFUNCTION
+
+OUTPUT add10(a)
+
+// 5
+DECLARE b : STRING
+OUTPUT a, b
+
+// 6
+FOR i <- 1 TO 10
+    OUTPUT i
+NEXT i
+
+// 7
+OPEN "Desktop/test.txt"
+WRITE a
+CLOSE "Desktop/test.txt"
+
+// 8
+REPEAT
+    a <- a + 1
+    OUTPUT a
+UNTIL a = 100
+
+// 9
+WHILE a <> 1000 DO
+    a <- a + 1
+    OUTPUT a
+ENDWHILE
