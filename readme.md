@@ -34,7 +34,7 @@ default_value = {'int': 0; 'bool': false; 'float': 0; 'str': ''}
 需要next-1的语句: ENDIF | NEXT | ENDWHILE | UNTIL
 需要current-1的语句: ELSE IF | ELSE
 
-其实cie是不需要declare的，所以我们也可以不写，随地拉变量。
+其实caie是不需要declare的，但是我们并不可以不写，随地拉变量是一个坏习惯。
 不支持case of(我相信也没什么人会写这个)
 部分函数没有转化成python3的书写方式，而是通过定义那些函数达到可以运行的目的。
 若要使用二维数组，请使用arr[a][b]而不是arr[a, b]
@@ -46,61 +46,61 @@ default_value = {'int': 0; 'bool': false; 'float': 0; 'str': ''}
 
 # Example
 
-// 1
-DECLARE a : INT
-a <- 1
-OUTPUT(a)
+    // 1
+    DECLARE a : INT
+    a <- 1
+    OUTPUT(a)
 
-// 2
-IF a = 1 THEN
-    OUTPUT(a+1)
-ELSE IF a = 2 THEN
-    OUTPUT(a+2)
-ELSE
-    OUTPUT a + 3
-ENDIF
+    // 2
+    IF a = 1 THEN
+        OUTPUT(a+1)
+    ELSE IF a = 2 THEN
+        OUTPUT(a+2)
+    ELSE
+        OUTPUT a + 3
+    ENDIF
 
-// 3
-IF a = "1" THEN
-    OUTPUT "Equal to 1"
-ELSE
-    OUTPUT "Not equal to 1"
-ENDIF
+    // 3
+    IF a = "1" THEN
+        OUTPUT "Equal to 1"
+    ELSE
+        OUTPUT "Not equal to 1"
+    ENDIF
 
-// 3
-INPUT a
-OUTPUT a
-
-// 4
-FUNCTION add10(a)
-    OUTPUT a + 10
-    RETURN a + 10
-ENDFUNCTION
-
-OUTPUT add10(a)
-
-// 5
-DECLARE b : STRING
-OUTPUT a, b
-
-// 6
-FOR i <- 1 TO 10
-    OUTPUT i
-NEXT i
-
-// 7
-OPEN "Desktop/test.txt"
-WRITE a
-CLOSE "Desktop/test.txt"
-
-// 8
-REPEAT
-    a <- a + 1
+    // 3
+    INPUT a
     OUTPUT a
-UNTIL a = 100
 
-// 9
-WHILE a <> 1000 DO
-    a <- a + 1
-    OUTPUT a
-ENDWHILE
+    // 4
+    FUNCTION add10(a)
+        OUTPUT a + 10
+        RETURN a + 10
+    ENDFUNCTION
+
+    OUTPUT add10(a)
+
+    // 5
+    DECLARE b : STRING
+    OUTPUT a, b
+
+    // 6
+    FOR i <- 1 TO 10
+        OUTPUT i
+    NEXT i
+
+    // 7
+    OPEN "Desktop/test.txt"
+    WRITE a
+    CLOSE "Desktop/test.txt"
+
+    // 8
+    REPEAT
+        a <- a + 1
+        OUTPUT a
+    UNTIL a = 100
+
+    // 9
+    WHILE a <> 1000 DO
+        a <- a + 1
+        OUTPUT a
+    ENDWHILE
